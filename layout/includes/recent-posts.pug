@@ -1,0 +1,19 @@
+each article, index in page.posts.data
+    div#recent-post-item
+        - let article_link = article.path 
+        - let article_title = article.title
+        - let article_date = date(article.date, "YYYY-MM-DD")
+        - let article_desc = ""
+        if article.description
+            - article_desc = article.description
+        
+        div#recent-post-info
+            a#article-title(href=url_for(article_link) title=article_title)= article_title
+            span#article-date= article_date
+            span#article-desc= article_desc
+            if article.tags.data.length > 0
+                span#article-tags
+                    each tag, index in article.tags.data 
+                        a(href=url_for(tag.path)).article-meta__tags #[=tag.name]
+                        if (index < article.tags.data.length - 1)
+                            span.article-meta-link #[=", "]

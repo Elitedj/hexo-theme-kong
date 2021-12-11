@@ -1,0 +1,7 @@
+nav#nav
+    div#menus
+        div#menus_items
+            each value, label in theme.menu
+                div#menus_item
+                    a#site-page(href=url_for(value))
+                        span=label

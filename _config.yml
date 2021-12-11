@@ -1,0 +1,51 @@
+# Favicon
+favicon: 
+
+# stylesheets loaded in the <head>
+stylesheets:
+
+# scripts loaded in the end of the body
+scripts:
+
+# cdn for third-party library
+cdn:
+  css:
+
+  js:
+
+# header
+header:
+  title: Kong
+  subtitle: Hello World.
+  cover: https://images2.alphacoders.com/201/thumb-1920-201532.jpg
+
+# blog info
+blog_info:
+  author: Kong
+
+# menu
+menu:
+  Home: /
+  About: /about/
+  Link: /link/
+
+# footer
+footer:
+  since: 2021
+
+# comments
+comments:
+  use: ['Valine']
+
+# valine
+# https://valine.js.org
+valine:
+  appId: 
+  appKey: 
+  avatar: monsterid # gravatar style https://valine.js.org/#/avatar
+  serverURLs: # This configuration is suitable for domestic custom domain name users, overseas version will be automatically detected (no need to manually fill in)
+  bg: # valine background
+  visitor: false
+  option:
+  meta: ['nick', 'mail']
+  lang: en

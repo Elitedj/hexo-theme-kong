@@ -1,0 +1,14 @@
+div#footer-wrap
+    - var now = new Date()
+    - var year = now.getFullYear()
+
+    div#copyright!= `&copy;${theme.footer.since} - ${year} By ${theme.blog_info.author}`
+    div#site-pv-info
+        span#site-pv='PageViews '
+        span#busuanzi_value_site_pv
+    div#framework-info
+        p= 'Power by '
+        a(href='https://hexo.io')= 'Hexo'
+        p= ' | '
+        p= 'Theme by '
+        a(href='https://github.com/Elitedj/hexo-theme-kong')= 'Kong'

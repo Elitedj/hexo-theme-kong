@@ -1,0 +1,80 @@
+#content-inner
+    position: relative
+    width: 100%
+    padding-top: 50px
+
+    #recent-post-item
+        position: relative
+        width: 50%
+        margin: auto
+        padding: 10px 5px
+        border-bottom: 1px solid $light-grey
+
+        &:before
+            content: ""
+            position: absolute
+            left: 0
+            bottom: -2px
+            height: 2px
+            width: 100%
+            background: black
+            transform: scale(0)
+            transition: all .3s
+
+        &:hover:before
+            transform: scale(1)
+
+        #recent-post-info
+            display: flex
+            flex-flow: row wrap
+            width: 100%
+
+            a
+                text-decoration: none
+                color: $dark-blue
+
+                &:hover
+                    color: $light-blue
+
+            #article-title
+                font-size: 1.4em
+                width: 80%
+                word-break: break-all
+                text-align: left
+
+            #article-date
+                font-size: 1.2em
+                width: 20%
+                word-break: break-all
+                text-align: right
+
+            #article-desc
+                font-size: 1.2em
+                width: 80%
+                word-break: break-all
+                text-align: left
+                color: $dark-grey
+
+            #article-tags
+                font-size: 1.2em
+                width: 20%
+                word-break: break-all
+                text-align: right
+
+#pagination-wrap
+    position: relative
+    width: 100%
+    padding-top: 50px
+
+    #pagination
+        position: relative
+        width: 100%
+        text-align: center
+        font-size: 1.3em
+
+        a
+            text-decoration: none
+            color: $dark-blue
+
+            &:hover
+                color: $light-blue

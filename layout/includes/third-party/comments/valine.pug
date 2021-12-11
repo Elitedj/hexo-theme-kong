@@ -1,0 +1,20 @@
+- let emojiMaps = '""'
+if site.data.valine
+  - emojiMaps = JSON.stringify(site.data.valine)
+
+script(src="https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js")
+
+script.
+    new Valine(Object.assign({
+        el: '#vcomment',
+        appId: '#{theme.valine.appId}',
+        appKey: '#{theme.valine.appKey}',
+        avatar: '#{theme.valine.avatar}',
+        serverURLs: '#{theme.valine.serverURLs}',
+        emojiMaps: !{emojiMaps},
+        path: window.location.pathname,
+        visitor: #{theme.valine.visitor},
+        meta: Array.from('#{theme.valine.meta}'.split(",")),
+        lang: '#{theme.valine.lang}'
+    }, !{JSON.stringify(theme.valine.option)}))
+  

@@ -1,0 +1,24 @@
+- 
+    var options = {
+        prev_text: '<',
+        next_text: '>',
+        mid_size: 1,
+        escape: false,
+    }
+
+if is_home()
+    nav#pagination-wrap 
+        div#pagination
+            - options.format= "page/%d/#content-inner"
+            !=paginator(options)
+else if is_post()
+    - let prev = page.prev 
+    - let next = page.next 
+    nav#post-pagination-wrap
+        div#post-pagination
+            if prev
+                div#prev-post
+                    a(href=url_for(prev.path))!='◀ ' + prev.title 
+            if next
+                div#next-post
+                    a(href=url_for(next.path))!=next.title + ' ▶'

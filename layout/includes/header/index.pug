@@ -1,0 +1,32 @@
+- var site_title = page.title
+- var site_subtitle = false
+- var header_img = false
+- var header_img_class = 'not-top-full-page'
+
+if is_home()
+    - site_title = theme.header.title
+    - site_subtitle = theme.header.subtitle
+    - header_img = theme.header.cover
+    - header_img_class = 'top-full-page'
+else if is_post()
+    - header_img = page.top_img
+else if is_page()
+    - header_img = page.top_img
+
+- header_img = header_img && header_img.indexOf('/') !== -1 ? `background-image: url('${url_for(header_img)}')` : 'background: #0031a7'
+
+header#page-header(class=header_img_class style=header_img)
+    !=partial('includes/header/nav', {}, {cache: true})
+    if header_img !== false
+        if is_home()
+            div#site-info
+                h1#site-title= site_title
+                div#site-subtitle= site_subtitle
+        else if is_post()
+            include ./post_info.pug
+        else if is_page()
+            div#site-page-info
+                h1#site-title= site_title
+    else
+        div#site-page-info
+            h1#site-title= site_title

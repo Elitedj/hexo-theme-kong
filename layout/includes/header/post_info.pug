@@ -1,0 +1,12 @@
+- var post_title = page.title
+- var post_time = date(page.date, "YYYY-MM-DD")
+- var update_time = date(page.update, "YYYY-MM-DD")
+
+div#post-page-info
+    div#post-page-info-wrap
+        div#post-title= post_title
+        div#post-time= '发表于 ' + post_time
+        div#update-time= '更新于 ' + update_time
+        div#pv-info
+            span#pv='阅读量 '
+            span#busuanzi_value_page_pv
